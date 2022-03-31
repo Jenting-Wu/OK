@@ -29,6 +29,17 @@
             font-stretch: normal;
         }
 
+        @font-face {
+            font-family: NotoSansCJKTC;
+            src: local(NotoSansCJKTC-regular),
+                url(/path/to/NotoSansCJKTC-regular.woff2) format("woff2"),
+                url(/path/to/NotoSansCJKTC-regular.woff) format("woff"),
+                url(/path/to/NotoSansCJKTC-regular.ttf) format("truetype");
+            font-weight: normal;
+            font-style: normal;
+            font-stretch: normal;
+        }
+
         * {
             /* outline: 1px solid red; */
         }
@@ -36,18 +47,22 @@
         .container {
             width: 2243px;
             height: 1125px;
-            background: url(/img/background-image.png);
+            background: -webkit-image-set(url("img/background-image.png") 1x,
+                    url("img/background-image@2x.png") 2x, url('img/background-image@3x.png') 3x);
             background-size: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .wrap {
             width: 1428px;
             height: 967px;
-            background: url(/img/Stall-image-green.png) no-repeat;
+            background: -webkit-image-set(url("img/stall-image-green.png") 1x,
+                    url("img/stall-image-green@2x.png") 2x, url('stall-image-green@3x.png') 3x) no-repeat;
             background-size: contain;
             margin: 0 0;
             z-index: 2;
-
 
         }
 
@@ -57,6 +72,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
         .top-botton-wrap {
@@ -64,7 +80,7 @@
             height: 67px;
             position: absolute;
             top: 50px;
-            left: 50px;
+            left: 40px;
         }
 
         .top-botton {
@@ -133,7 +149,6 @@
         }
 
         .middle_left {
-            /* outline: 4px solid blue; */
             margin-right: 100px;
             margin-left: 8px;
             margin-bottom: 180px;
@@ -142,17 +157,16 @@
 
         .middle_middle {
             margin-top: -10px;
-            /* outline: 4px solid green; */
         }
 
         .middle_right {
             width: 274px;
             height: 354px;
-            background: url(/img/Acr-image.png);
+            background: -webkit-image-set(url('img/Acr-image.png') 1x,
+                    url('img/Acr-image@2x.png') 2x, url('img/Acr-image@3x.png') 3x);
             display: flex;
             align-items: center;
             justify-content: center;
-            /* outline: 4px solid yellow; */
             margin-left: 72px;
             position: relative;
 
@@ -174,9 +188,7 @@
         }
 
         .middle_right_wrap>div {
-            /* outline: 3px solid orange; */
             width: 100%;
-            /* outline: 1px solid blue; */
 
         }
 
@@ -184,7 +196,6 @@
             margin: 0;
             margin-top: 5px;
             /* style */
-
             font-family: NotoSansCJKTC;
             font-size: 13.4px;
             font-weight: normal;
@@ -194,7 +205,6 @@
             letter-spacing: normal;
             text-align: left;
             color: #333;
-            /* outline: 1px solid red; */
         }
 
         /* --------------- bottom ---------------- */
@@ -221,10 +231,12 @@
         <div class="wrap">
             <div class="top">
                 <div class="top-botton-wrap">
-                    <img class="top-botton" src="/img/lastPage_botton.png" alt="">
+                    <img class="top-botton" src="img/lastPage_botton.png" srcset="img/lastPage_botton@2x.png 2x,
+                    img/lastPage_botton@3x.png 3x" alt="">
                 </div>
                 <div class="top_img_wrap">
-                    <img src="/img/logo.png" alt="">
+                    <img src="img/logo.png" srcset="img/logo@2x.png 2x,
+                    img/logo@3x.png 3x" alt="">
                 </div>
                 <div class="top_text">
                     <p class="top_text_ch">流亞科技股份有限公司</p>
@@ -234,28 +246,35 @@
 
             <div class="middle">
                 <div class="middle_left">
-                    <img src="/img/img_caro.png" alt="">
+                    <img src="img/img_caro.png" srcset="img/img_caro@2x.png 2x,
+                    img/img_caro@3x.png 3x" alt="">
                 </div>
                 <div class="middle_middle">
-                    <img src="/img/middle.png" alt="">
+                    <img src="img/middle.png" srcset="img/middle@2x.png 2x,
+                    img/middle@3x.png 3x" alt="">
                 </div>
                 <div class="middle_right">
-                    <img class="middle_right_web" src="/img/web.png" alt="">
+                    <img class="middle_right_web" src="img/web.png" srcset="img/web@2x.png 2x,
+                    img/web@3x.png 3x" alt="">
                     <div class="middle_right_wrap">
                         <div class="box_email">
-                            <img src="img/email.png" alt="">
+                            <img src="img/email.png" srcset="img/email@2x.png 2x,
+                            img/email@3x.png 3x" alt="">
                             <p>joseph.lo@logicart.com.tw</p>
                         </div>
                         <div class="box_tel">
-                            <img src="img/tel.png" alt="">
+                            <img src="img/tel.png" srcset="img/tel@2x.png 2x,
+                            img/tel@3x.png 3x" alt="">
                             <p>+886-2-2999-2899</p>
                         </div>
                         <div class="box_fax">
-                            <img src="img/fax.png" alt="">
+                            <img src="img/fax.png" srcset="img/fax@2x.png 2x,
+                            img/fax@3x.png 3x" alt="">
                             <p>+886-2-2999-2893</p>
                         </div>
                         <div class="box_add">
-                            <img src="img/add.png" alt="">
+                            <img src="img/add.png" srcset="img/add@2x.png 2x,
+                            img/add@3x.png 3x" alt="">
                             <p>8F-7, No.16, Lane 609, Sec.5, Chung-Shin Road, San-Chung Dist., New Taipei City, Taiwan
                             </p>
                         </div>
@@ -264,8 +283,10 @@
             </div>
 
             <div class="bottom">
-                <img src="/img/products-list-green.png" alt="">
-                <img class="botton_pointer" src="/img/products-list-pointer.png" alt="">
+                <img src="img/products-list-green.png" srcset="img/products-list-green@2x.png 2x,
+                img/products-list-green@3x.png 3x" alt="">
+                <img class="botton_pointer" src="img/products-list.png" srcset="img/products-list@2x.png 2x,
+                img/products-list@3x.png 3x" alt="">
             </div>
         </div>
 
